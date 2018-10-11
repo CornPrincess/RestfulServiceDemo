@@ -21,7 +21,7 @@ public class LoginController {
                         @RequestParam("password") String password,
                         Map<String, Object> map,
                         HttpSession session) {
-        if(!StringUtils.isEmpty(username) && "123456".equals(password)) {
+        if(!StringUtils.isEmpty(username) && "1".equals(password)) {
             // 记录登录情况，防止直接通过get登录
             session.setAttribute("loginUser", username);
             // 登录成功,防止表单重复提交使用重定向

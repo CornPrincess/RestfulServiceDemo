@@ -30,7 +30,7 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
             public void addViewControllers(ViewControllerRegistry registry) {
                 registry.addViewController("/").setViewName("Signin");
                 registry.addViewController("/index.html").setViewName("Signin");
-                registry.addViewController("/main.html").setViewName("dashboard");
+                registry.addViewController("/main.html").setViewName("/emp/list");
             }
 
             // 配置拦截器

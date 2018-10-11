@@ -80,8 +80,8 @@
 									<td th:text="${emp.department.departmentName}"></td>
 									<td th:text="${#dates.format(emp.birth, 'yyyy-MM-dd')}"></td>
 									<td>
-										<button class="btn btn-sm btn-primary">Edit</button>
-										<button class="btn btn-sm btn-danger">Delete</button>
+										<a class="btn btn-sm btn-primary" th:href="@{/emp}+${emp.id}">Edit</a>
+										<a class="btn btn-sm btn-danger" th:href="@{/emp}+${emp.id}">Delete</a>
 									</td>
 								</tr>
 							</tbody>

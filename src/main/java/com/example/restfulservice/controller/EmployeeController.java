@@ -1,6 +1,8 @@
 package com.example.restfulservice.controller;
 
+import com.example.restfulservice.dao.DepartmentDao;
 import com.example.restfulservice.dao.EmployeeDao;
+import com.example.restfulservice.model.Department;
 import com.example.restfulservice.model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,6 +22,9 @@ public class EmployeeController {
     @Autowired
     EmployeeDao employeeDao;
 
+    @Autowired
+    DepartmentDao departmentDao;
+
     // 查询所有员工返回列表页面
     @GetMapping("/emps")
     public String list(Model model) {
@@ -27,4 +32,14 @@ public class EmployeeController {
         model.addAttribute("emps", employees);
         return "emp/list";
     }
+
+    // 来到员工添加页面
+    @GetMapping("/emp")
+    public String toAddPage(Model model) {
+        // 来到添加页面,查出所有部门，在页面显示
+        Collection<Department> departments = departmentDao.getDepartments();
+        model.addAttribute("depts", departments);
+        return "emp/add";
+    }
+
 }

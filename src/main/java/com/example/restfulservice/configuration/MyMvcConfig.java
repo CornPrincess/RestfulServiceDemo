@@ -37,7 +37,7 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
             // 其中springboot已经对静态资源做了处理，可以访问到
             @Override
             public void addInterceptors(InterceptorRegistry registry) {
-                registry.addInterceptor(loginHandlerInterceptor).addPathPatterns().addPathPatterns("/**")
+                registry.addInterceptor(loginHandlerInterceptor).addPathPatterns("/**")
                         .excludePathPatterns("/", "/index.html", "/user/signin");
                 super.addInterceptors(registry);
             }
